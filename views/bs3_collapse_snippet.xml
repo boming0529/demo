@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="s_bs3_collapse" name="bs collapse">
+            <section class="s_bs3_collapse bs3_collapse">
+                <div class="container">
+                    <h2 class="page-header">Point of Sale Questions<small>v7</small>
+                    </h2>
+                    <div class="panel-group" role="tablist">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" data-toggle="collapse">
+                                <h4 class="panel-title">
+                                    Demo01
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel">
+                                <div class="panel-body">
+                                    <p>
+                                        here can into content
+                                    </p>
+                                    <p>
+                                        This is Context.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" data-toggle="collapse">
+                                <h4 class="panel-title">
+                                    Demo02
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel">
+                                <div class="panel-body">
+                                    <p>
+                                        test001
+                                    </p>
+                                    <p>
+                                        test002
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" data-toggle="collapse">
+                                <h4 class="panel-title">
+                                    Demo03
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" role="tabpanel">
+                                <div class="panel-body">
+                                    <p>Yes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="custom_bs3_collapse_options" inherit_id="website.snippet_options">
+            <xpath expr="." position="inside">
+                <div data-js="collapse_demo" data-snippet-option-id="custom_bs3_collapse_options" data-selector=".bs3_collapse">
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#" class="js_add" data-_add_new_tab="true">Add New Tab</a>
+                    </li>
+                    <li>
+                        <a href="#" class="js_remove" data-_remove_current_tab="true">Remove Current Tab</a>
+                    </li>
+                </div>
+            </xpath>
+        </template>
+        <template id="dobtor_bs_collapse_snippet_blocks" inherit_id="website.snippets">
+            <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+                <t t-snippet="bs_demo.s_bs3_collapse" t-thumbnail="/website/static/src/img/blocks/block_faq.png"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
