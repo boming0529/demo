@@ -25,7 +25,7 @@ odoo.define('bs3_collapse_demo', function (require) {
             $panel.each(function(index, item) {
                 var $item = $(item);
                 time++;
-                panel_id = "bs3CollapseTab" + time;
+                var panel_id = "bs3CollapseTab" + time;
                 $item.attr("id", panel_id);
                 var $tab = $item.closest('.panel-default').find('.panel-heading')
                 $tab.attr('data-target', "#" + panel_id);

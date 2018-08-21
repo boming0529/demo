@@ -59,14 +59,14 @@
         </template>
         <template id="custom_bs3_collapse_options" inherit_id="website.snippet_options">
             <xpath expr="." position="inside">
-                <div data-js="collapse_demo" data-snippet-option-id="custom_bs3_collapse_options" data-selector=".bs3_collapse">
+                <div data-js="collapse_demo" data-selector="section.bs3_collapse">
                     <li class="divider"></li>
                     <li>
                         <a href="#" class="js_add" data-_add_new_tab="true">Add New Tab</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#" class="js_remove" data-_remove_current_tab="true">Remove Current Tab</a>
-                    </li>
+                    </li> -->
                 </div>
             </xpath>
         </template>
