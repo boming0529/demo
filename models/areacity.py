@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class AreaCity(models.Model):
-    _name = 'areacity'
+    _name = 'cityarea'
 
     name = fields.Char(
         string='Area',

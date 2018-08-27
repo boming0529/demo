@@ -14,7 +14,7 @@
         'views/assets.xml',
         'views/bs3_collapse_snippet.xml',
         'views/parnter_view.xml',
-		'data/res.country.state.csv',
-        'data/areacity.csv',
+      	'data/res.country.state.csv',
+        'data/cityarea.csv',
     ],
 }

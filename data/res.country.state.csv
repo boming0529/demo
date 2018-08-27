@@ -1,3 +1,24 @@
 id,name,code,country_id/id
 state_tw_tpe,Taipei City,TPE,base.tw
+state_tw_klu,Keelung,KLU,base.tw
 state_tw_tph,New Taipei City,TPH,base.tw
+state_tw_iln,Ilan,ILN,base.tw
+state_tw_hsc,Hsinchu City,HSC,base.tw
+state_tw_hsh,Hsinchu,HSH,base.tw
+state_tw_tyc,Taoyuan City,TYC,base.tw
+state_tw_mal,Miaoli County,MAL,base.tw
+state_tw_txg,Taichung City,TXG,base.tw
+state_tw_cwh,Changhua County,CWH,base.tw
+state_tw_nto,Nantou,NTO,base.tw
+state_tw_cyi,Chiayi City,CYI,base.tw
+state_tw_chy,Chiai City,CHY,base.tw
+state_tw_yun,Yunlin County,YUN,base.tw
+state_tw_lnn,Lienchiang,LNN,base.tw
+state_tw_kmn,Kinmen,KMN,base.tw
+state_tw_hwa,Hualian Coungy,HWA,base.tw
+state_tw_ttt,Taitung,TTT,base.tw
+state_tw_iuh,Pingtung,IUH,base.tw
+state_tw_peh,Penghu,PEH,base.tw
+state_tw_ssl,SouthSeaIsland,SSL,base.tw
+state_tw_khh,Kaohsiung,KHH,base.tw
+state_tw_tnn,Tainan City,TNN,base.tw
