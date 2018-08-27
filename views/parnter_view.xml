@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="modify_zip_form" model="ir.ui.view">
+            <field name="name">modify_zip.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='zip']" position="after">
+                    <field name='zipcode' placeholder="ZIP" class="o_address_zip" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                </xpath>
+                <!-- <xpath expr="//field[@name='zip']" position="attributes">
+                    
+                    <attribute name="invisible">1</attribute>
+                    
+                </xpath> -->
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
