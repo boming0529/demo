@@ -10,3 +10,10 @@ class ResParnter(models.Model):
         string='Zip Code',
         comodel_name='areacity',
     )
+
+    @api.onchange('state_id')
+    def _onchange_state_id(self):
+        res = {'domain': {'zipcode': []}}
+        if self.state_id:
+            res = {'domain': {'zipcode': [('state_id', '=', self.state_id.id)]}}
+        return res
