@@ -8,7 +8,7 @@ class ResParnter(models.Model):
 
     zipcode = fields.Many2one(
         string='Zip Code',
-        comodel_name='areacity',
+        comodel_name='cityarea',
     )
 
     @api.onchange('state_id')
