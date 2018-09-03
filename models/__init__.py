@@ -2,4 +2,4 @@
 
 from . import areacity
 from . import res_parnter
-
+from . import abstract_test

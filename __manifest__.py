@@ -3,7 +3,8 @@
     'name': "bs_demo",
     'summary': """Bs3 snippent demo""",
     'description': """
-        Bs3 snippent demo
+        1. Bs3 snippent demo.
+        2. handle tiawin localization.
     """,
     'author': "michael, dobtor si",
     'website': "http://www.dobtor.com",
@@ -13,8 +14,9 @@
     'data': [
         'views/assets.xml',
         'views/bs3_collapse_snippet.xml',
-        'views/parnter_view.xml',
-      	'data/res.country.state.csv',
-        'data/cityarea.csv',
+        'views/abstract_view.xml',
+        # 'views/parnter_view.xml',
+      	# 'data/res.country.state.csv',
+        # 'data/cityarea.csv',
     ],
 }

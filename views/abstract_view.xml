@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- common form view -->
+        <record model="ir.ui.view" id="test_common_form">
+            <field name="name">test_common_form</field>
+            <field name="model">abstract.test</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="alt"/>
+                            <field name="image" widget="image" />
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- common tree view -->
+        <record model="ir.ui.view" id="test_common_tree">
+            <field name="name">test_common_tree</field>
+            <field name="model">abstract.test</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="alt"/>
+                    <field name="image"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <!-- test1 -->
+        <record model="ir.actions.act_window" id="bs_demo.test1">
+            <field name="name">bs_demo test1</field>
+            <field name="res_model">test.test1</field>
+            <field name="context">{
+                'form_view_ref':'bs_demo.test_common_form',
+                'tree_view_ref':'bs_demo.test_common_tree',
+            }</field>
+        </record>
+        <!-- test2 -->
+        <record model="ir.actions.act_window" id="bs_demo.test2">
+            <field name="name">bs_demo test2</field>
+            <field name="res_model">test.test2</field>
+            <field name="context">{
+                'form_view_ref':'bs_demo.test_common_form',
+                'tree_view_ref':'bs_demo.test_common_tree',
+            }</field>
+        </record>
+        <!-- menu item -->
+        <menuitem name="bs_demo" id="bs_demo.menu_root"/>
+        <menuitem name="Menu 1" id="bs_demo.menu_1" parent="bs_demo.menu_root"/>
+        <menuitem name="Menu 2" id="bs_demo.menu_2" parent="bs_demo.menu_root"/>
+        <menuitem name="Test1" id="bs_demo.menu_test1" parent="bs_demo.menu_1" action="bs_demo.test1"/>
+        <menuitem name="Test2" id="bs_demo.menu_test2" parent="bs_demo.menu_2" action="bs_demo.test2"/>
+    </data>
+</odoo>
