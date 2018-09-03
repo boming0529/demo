@@ -18,6 +18,17 @@
                 </form>
             </field>
         </record>
+        <!-- test1 view -->
+        <record model="ir.ui.view" id="test1_form">
+            <field name="name">test1_form</field>
+            <field name="model">test.test1</field>
+            <field name="inherit_id" ref="bs_demo.test_common_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="after">
+                    <field name="values01"/>
+                </xpath>
+            </field>
+        </record>
         <!-- common tree view -->
         <record model="ir.ui.view" id="test_common_tree">
             <field name="name">test_common_tree</field>
@@ -36,7 +47,7 @@
             <field name="name">bs_demo test1</field>
             <field name="res_model">test.test1</field>
             <field name="context">{
-                'form_view_ref':'bs_demo.test_common_form',
+                'form_view_ref':'bs_demo.test1_form',
                 'tree_view_ref':'bs_demo.test_common_tree',
             }</field>
         </record>

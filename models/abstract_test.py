@@ -13,7 +13,9 @@ class Abstract_test(models.AbstractModel):
 class Test1(models.Model):
     _name = 'test.test1'
     _inherit = 'abstract.test'
+    values01 = fields.Char('values01')
 
 class Test1(models.Model):
     _name = 'test.test2'
     _inherit = 'abstract.test'
+    values02 = fields.Char('values02')
