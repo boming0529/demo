@@ -5,7 +5,7 @@
             <t t-call="website.layout">
                 <div id="wrap">
                     <div class="container">
-                        <form class="bs_from" action="/test/create2" method="post" enctype="multipart/form-data">
+                        <form class="bs_from" action="/test/insert" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="row" style="margin-top:20px;">
                                 <div class="form-group">

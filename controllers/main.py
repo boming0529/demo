@@ -5,11 +5,11 @@ from odoo.http import request
 
 
 class Main(http.Controller):
-    @http.route(['/test/create'], method="get", website=True, cref=False)
+    @http.route(['/test/create'], type="http", method=["Get"], website=True, cref=False)
     def get_create(self, **post):
         return request.render('bs_demo.bs_jsignature_test', {'models': None})
 
-    @http.route(['/test/create2'], method="post", website=True, cref=True)
+    @http.route(['/test/insert'], type="http", method=["Post"], website=True, cref=True)
     def post_create(self, **post):
         if post.get('signature'):
             jid = request.env['bs_demo.jsignature'].create({
