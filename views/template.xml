@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="bs_jsignature_test">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container">
+                        <form class="bs_from" action="/test/create2" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="row" style="margin-top:20px;">
+                                <div class="form-group">
+                                    <label class="col-md-3 " for="last_name">Input Your Name</label>
+                                    <div class="col-md-9 ">
+                                        <input type="text" class="form-control" name="name"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top:20px;">
+                                <div class="panel panel-default panel-bs-signature">
+                                    <div class="panel-heading">
+                                        <div class="pull-right">
+                                            <input type="text" class="form-control hidden" name="signature"/>
+                                            <a class="btn btn-xs sign_clean">Clear</a>
+                                            <a class="btn btn-xs sign_accept">Accept</a>
+                                            <div class="tooltip bottom" role="tooltip" style="opacity: 1;">
+                                                <div class="tooltip-arrow" style="left: 80%;"></div>
+                                                <div class="tooltip-inner" style="margin-left: 30px;">finished</div>
+                                            </div>
+                                        </div>
+                                        <strong>Draw your signature</strong>
+                                    </div>
+                                    <div class="panel-body bs_signature"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <button class="btn btn-primary btn-lg">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

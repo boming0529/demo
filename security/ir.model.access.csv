@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bs_demo_jsignature,access_bs_demo_jsignature,model_bs_demo_jsignature,,1,1,1,1
