@@ -47,7 +47,7 @@
             <t t-call="website.layout">
                 <div id="wrap">
                     <div class="container">
-                        <img t-att-src="'/web/image/%s' %(member.signature_id.id)" alt="signature"/>
+                        <img t-att-src="'/web/image/%s' %(member.signature_id.id)" t-attf-alt="#{member.signature_id.name}"/>
                     </div>
                 </div>
             </t>
