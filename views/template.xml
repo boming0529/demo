@@ -42,5 +42,15 @@
                 </div>
             </t>
         </template>
+
+        <template id="bs_jsignature_test2">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container">
+                        <img t-att-src="'/web/image/%s' %(member.signature_id.id)" alt="signature"/>
+                    </div>
+                </div>
+            </t>
+        </template>
     </data>
 </odoo>
