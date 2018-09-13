@@ -4,8 +4,9 @@
     <template id="bs3_demo_assets_editor" inherit_id="website.assets_editor" name="Website Editor">
       <xpath expr="." position="inside">
         <script type="text/javascript" src="/bs_demo/static/src/js/bs3_collapse_demo.js"></script>
-        
       </xpath>
+    </template>
+    <template id="bs3_demo_assets_frontend" inherit_id="website.assets_frontend" name="Website assets_frontend">
       <xpath expr="//script[last()]" position="after">
         <script type="text/javascript" src="/bs_demo/static/src/js/website_bs_signature.js"></script>
       </xpath>

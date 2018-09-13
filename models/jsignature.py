@@ -17,4 +17,4 @@ class Jsignature(models.Model):
         comodel_name='ir.attachment',
     )
     
-    
+    test = fields.Char('test')

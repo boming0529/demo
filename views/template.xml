@@ -11,7 +11,15 @@
                                 <div class="form-group">
                                     <label class="col-md-3 " for="last_name">Input Your Name</label>
                                     <div class="col-md-9 ">
-                                        <input type="text" class="form-control" name="name"/>
+                                        <input type="text" class="form-control" name="name" />
+                                        <span t-if="error and error.get('name')" t-esc="error.get('name')" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 " for="last_name">Input Your test</label>
+                                    <div class="col-md-9 ">
+                                        <input type="text" class="form-control" name="test" />
+                                        <span t-if="error and error.get('test')" t-esc="error.get('test')" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +55,7 @@
             <t t-call="website.layout">
                 <div id="wrap">
                     <div class="container">
-                        <img t-att-src="'/web/image/%s' %(member.signature_id.id)" t-attf-alt="#{member.signature_id.name}"/>
+                        <img t-if="member.signature_id" t-att-src="'/web/image/%s' %(member.signature_id.id)" t-attf-alt="#{member.signature_id.name}"/>
                     </div>
                 </div>
             </t>

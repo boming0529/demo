@@ -7,9 +7,8 @@ from odoo.http import request
 class Main(http.Controller):
     @http.route([
         '/test/create',
-        '/test/create'
         ],
-        type="http", auth='public', method=["Get"], website=True, csrf=False)
+                type="http", auth='public', method=["Get"], website=True, csrf=False)
     def get_create(self, **post):
         return request.render('bs_demo.bs_jsignature_test', {})
 
