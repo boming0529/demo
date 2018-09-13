@@ -4,12 +4,13 @@ from odoo import http
 from odoo.http import request
 
 
+class fask_Jsignature(object):
+    def __init__(self, **post):
+        self.__dict__.update(post)
+
+
 class Main(http.Controller):
-    @http.route([
-        '/test/create',
-        '/test/create'
-        ],
-        type="http", auth='public', method=["Get"], website=True, csrf=False)
+    @http.route(['/test/create'], type="http", auth='public', method=["Get","Post"], website=True)
     def get_create(self, **post):
         return request.render('bs_demo.bs_jsignature_test', {})
 
@@ -19,11 +20,15 @@ class Main(http.Controller):
         error = {}
         if post.get('name') == 'noob':
             error['name'] = 'you shoud been a noob'
+            post['name'] = ''
         if not post.get('test'):
-            error['name'] = 'the test field is required.'
-        if error:
-            return request.redirect('/test/create', code=302)
-
+            error['test'] = 'the test field is required.'
+            post['test'] = ''
+        if error: 
+            return request.render('bs_demo.bs_jsignature_test', {
+                'member': fask_Jsignature(**post),
+                'error': error
+            })
         if post.get('signature'):
             jid = request.env['bs_demo.jsignature'].sudo().create({
                 'name': post.get('name'),
