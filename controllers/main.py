@@ -2,14 +2,15 @@
 
 from odoo import http
 from odoo.http import request
+from odoo import SUPERUSER_ID
 
-
-class fask_Jsignature(object):
-    def __init__(self, **post):
-        self.__dict__.update(post)
 
 
 class Main(http.Controller):
+    class fask_Jsignature(object):
+        def __init__(self, **post):
+            self.__dict__.update(post)
+
     @http.route(['/test/create'], type="http", auth='public', method=["Get","Post"], website=True)
     def get_create(self, **post):
         return request.render('bs_demo.bs_jsignature_test', {})
@@ -26,24 +27,31 @@ class Main(http.Controller):
             post['test'] = ''
         if error: 
             return request.render('bs_demo.bs_jsignature_test', {
-                'member': fask_Jsignature(**post),
+                'member': Main().fask_Jsignature(**post),
                 'error': error
             })
         if post.get('signature'):
+            filename = 'signature_of_%s' % (post.get('name'))
             jid = request.env['bs_demo.jsignature'].sudo().create({
                 'name': post.get('name'),
-                'signature': post.get('signature')
+                'signature': post.get('signature'),
+                'signature_id': {
+                    'name': post.get('name'),
+                    'res_model': 'bs_demo.jsignature',
+                    'type': 'binary',
+                    'datas_fname': filename,
+                    'datas': post.get('signature'),
+                }
             })
-            filename = 'signature_of_%s' % (post.get('name'))
-            aid = request.env['ir.attachment'].sudo().create({
-                'name': post.get('name'),
-                'res_model': 'bs_demo.jsignature',
-                'res_id': jid.id,
-                'type': 'binary',
-                'datas_fname': filename,
-                'datas': post.get('signature'),
-            })
-            jid.write({'signature_id': aid.id})
+            # aid = request.env['ir.attachment'].sudo().create({
+            #     'name': post.get('name'),
+            #     'res_model': 'bs_demo.jsignature',
+            #     'res_id': jid.id,
+            #     'type': 'binary',
+            #     'datas_fname': filename,
+            #     'datas': post.get('signature'),
+            # })
+            # jid.write({'signature_id': aid.id})
         else:
             jid = request.env['bs_demo.jsignature'].sudo().create({
                 'name': post.get('name'),
