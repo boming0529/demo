@@ -11,10 +11,16 @@ class Jsignature(models.Model):
         string='Signature',
         store=False,
     )
-
     signature_id = fields.Many2one(
         string='attachment id of signature',
         comodel_name='ir.attachment',
     )
-    
+    test_file = fields.Binary(
+        string='Test File',
+    )
+
     test = fields.Char('test')
+
+    @api.multi
+    def some_action(self):
+        self.name = 'change' + self.name

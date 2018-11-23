@@ -1,6 +1,8 @@
 odoo.define('bs_demo.website_signature', function (require) {
     'use strict';
 
+    var ajax = require('web.ajax');
+
     $(function () {
         if ($('.panel-bs-signature').length > 0) {
             $.each($('.panel-bs-signature'), function () {
